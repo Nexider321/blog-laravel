@@ -23,7 +23,9 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('create', [
+            'name' => 'Create A Homepage'
+        ]);
     }
 
     /**
