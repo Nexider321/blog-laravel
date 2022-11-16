@@ -28,6 +28,12 @@ Route::get('/link', function () {
 
 Route::get('/', [HomeController::class, 'show']);
 
+Route::get('/category/{slug}', [\App\Http\Controllers\CategoryController::class, 'index'])->name('category.index');
+
+Route::get('/tag/{slug}', [\App\Http\Controllers\TagController::class, 'index'])->name('tag.index');
+
+Route::get('/post/{slug}', [\App\Http\Controllers\PostController::class, 'show'])->name('post.show');
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
