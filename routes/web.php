@@ -25,3 +25,8 @@ Route::resource('home/', HomeController::class);
 Route::get('/link', function () {
     Artisan::call('storage:link');
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

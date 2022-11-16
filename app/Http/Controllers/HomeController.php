@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Home;
+use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,6 @@ class HomeController extends Controller
     public function index()
     {
         $home = Home::all()->first();
-
         return view ('home', [
             'name' => $home->name,
             'description' => $home->description,
