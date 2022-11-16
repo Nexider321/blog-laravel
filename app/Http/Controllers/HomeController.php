@@ -10,12 +10,13 @@ use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
+
 class HomeController extends Controller
 {
     public function show()
     {
 
-        $posts = Post::where('is_published', true)->orderBy('id', 'desc')->get();
+        $posts = Post::where('is_published', true)->orderBy('id', 'desc')->paginate(1);
 
 
         $categories = Category::all();

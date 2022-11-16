@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +33,8 @@ Route::get('/category/{slug}', [\App\Http\Controllers\CategoryController::class,
 
 Route::get('/tag/{slug}', [\App\Http\Controllers\TagController::class, 'index'])->name('tag.index');
 
-Route::get('/post/{slug}', [\App\Http\Controllers\PostController::class, 'show'])->name('post.show');
+Route::get('/post/{slug}', [PostController::class, 'show'])->name('post.show');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
