@@ -10,4 +10,3 @@
 ## About Blog
 
 This is my first try on Laravel framework
-Second commit
