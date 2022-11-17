@@ -6,7 +6,7 @@
             <!-- Blog post-->
             <div class="col-md-6">
                 <div class="card mb-4 px-md-0">
-                    <a href="{{ route('post.show', ['slug' => $post->slug]) }}"><img class="card-img-top" src="{{ Storage::url($post->featured_image) }}"
+                    <a href="{{ route('post.show', ['slug' => $post->slug]) }}"><img class="card-img-top" src="images/{{ $post->featured_image}}"
                                                                                      alt="..." /></a>
                     <div class="card-body">
                         <div class="small text-muted">{{ \Carbon\Carbon::parse($post->created_at)->format('M d, Y') }}
