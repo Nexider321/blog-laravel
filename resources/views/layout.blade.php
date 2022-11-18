@@ -20,14 +20,18 @@
 
 <body>
 <!-- Responsive navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="
+    /* text-align: center; */
+    display: flex;
+    flex-wrap: nowrap;
+">
     <div class="container">
-       
+
         <div class="container">
             <a class="navbar-brand" href="/"> Vladislavs </a>
-           
+
         </div>
-   
+
         <a class="navbar-brand" href="/">{{ setting('site_title') }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
