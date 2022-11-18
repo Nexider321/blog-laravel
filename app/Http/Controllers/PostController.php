@@ -31,4 +31,24 @@ class PostController extends Controller
             'tags' => $tags,
         ]);
     }
+
+    public function search(Request $request)
+    {
+        $key = $request->input('query');
+
+        $posts = Post::where('title', 'like', "%{$key}%")
+        ->orderBy('id', 'desc')
+        ->paginate(1);
+
+        $categories = Category::all();
+
+        $tags = Tag::all();
+
+        return view('search', [
+            'key' => $key,
+            'posts' => $posts,
+            'categories' => $categories,
+            'tags' => $tags,
+        ]);
+    }
 }
