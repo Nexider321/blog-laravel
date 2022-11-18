@@ -14,6 +14,7 @@ class PostController extends Controller
         //get the requested post, if it is published
         $post = Post::where('is_published', true)->where('slug', $slug)->firstOrFail();
 
+
         //get all the tags for this post
         $post_tags = $post->tags;
 
@@ -29,6 +30,7 @@ class PostController extends Controller
             'post_tags' => $post_tags,
             'categories' => $categories,
             'tags' => $tags,
+
         ]);
     }
 
@@ -46,6 +48,9 @@ class PostController extends Controller
         ->paginate(5);
 
         $categories = Category::all();
+
+
+
 
         $tags = Tag::all();
 
