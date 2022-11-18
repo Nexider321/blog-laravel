@@ -6,7 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-
+use Wamania\Snowball\StemmerFactory;
 class PostController extends Controller
 {
     public function show($slug)
@@ -34,9 +34,14 @@ class PostController extends Controller
 
     public function search(Request $request)
     {
+        $stemmer = StemmerFactory::create('en');
+
+
         $key = $request->input('query');
 
-        $posts = Post::where('title', 'like', "%{$key}%")
+        $stem = $stemmer->stem($key);
+        echo $stem;
+        $posts = Post::where('title', 'like', "%{$stem}%")
         ->orderBy('id', 'desc')
         ->paginate(1);
 
@@ -45,6 +50,7 @@ class PostController extends Controller
         $tags = Tag::all();
 
         return view('search', [
+            'stem' => $stem,
             'key' => $key,
             'posts' => $posts,
             'categories' => $categories,
