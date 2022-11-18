@@ -16,10 +16,10 @@ class CategoryController extends Controller
         $posts = $category->posts()
             ->where('is_published', true)
             ->orderBy('id', 'desc')
-            ->get();
+            ->paginate(5);
 
 
-        $categories = Category::all();
+        $categories =  Category::all();
 
         $tags = Tag::all();
 
