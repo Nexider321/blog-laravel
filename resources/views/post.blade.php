@@ -30,7 +30,7 @@
                 @endforeach
             </header>
             <!-- Preview image figure-->
-            <figure class="mb-4"><img class="img-fluid rounded" src="{{ Storage::url($post->featured_image) }}"
+            <figure class="mb-4"><img class="img-fluid rounded" src="/images/{{ $post->featured_image}}"
                                       alt="..." /></figure>
             <!-- Post content-->
             <section class="mb-5">

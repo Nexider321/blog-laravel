@@ -1,14 +1,15 @@
 <div class="col-lg-4">
 
-    <div class="card mb-4">
+<div class="card mb-4">
         <div class="card-header">Search</div>
-        <div class="card-body">
+        <form class="card-body" action="/search" method="GET" role="search">
+            {{ csrf_field() }}
             <div class="input-group">
                 <input class="form-control" type="text" placeholder="Enter search term..."
-                       aria-label="Enter search term..." aria-describedby="button-search" />
-                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                    aria-label="Enter search term..." aria-describedby="button-search" name="query"/>
+                <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
             </div>
-        </div>
+        </form>
     </div>
 
     <div class="card mb-4">

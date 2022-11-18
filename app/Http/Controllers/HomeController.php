@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function show()
     {
 
-        $posts = Post::where('is_published', true)->orderBy('id', 'desc')->paginate(1);
+        $posts = Post::where('is_published', true)->orderBy('id', 'desc')->paginate(5);
 
 
         $categories = Category::all();
