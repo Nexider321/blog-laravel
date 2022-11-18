@@ -11,7 +11,7 @@
     <header class="py-5 bg-light border-bottom mb-4">
         <div class="container">
             <div class="text-cent my-5">
-                <h1 class="fw-bolder">Tag: {{ $tag->name }}!</h1>
+                <h1 class="fw-bolder">{{ $tag->name }}!</h1>
                 <p class="lead mb-0">{{ $tag->description }}</p>
             </div>
         </div>

@@ -40,10 +40,10 @@ class PostController extends Controller
         $key = $request->input('query');
 
         $stem = $stemmer->stem($key);
-        echo $stem;
+
         $posts = Post::where('title', 'like', "%{$stem}%")
         ->orderBy('id', 'desc')
-        ->paginate(1);
+        ->paginate(5);
 
         $categories = Category::all();
 

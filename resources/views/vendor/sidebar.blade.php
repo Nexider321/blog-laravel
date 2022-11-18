@@ -29,7 +29,11 @@
     <div class="card mb-4">
         <div class="card-header">Tags</div>
         <div class="card-body">
-        You can put anything you want inside of these side use, and feature the bootstrap 5 card components!
+            @foreach($tags as $tag)
+                <li class="col-sm-6">
+                    <a href="{{ route('tag.index', ['slug' => $tag->slug]) }}">{{ $tag->name }}</a>
+                </li>
+            @endforeach
         </div>
     </div>
 </div>
