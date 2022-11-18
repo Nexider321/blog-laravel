@@ -88,6 +88,7 @@
                 </div>
             </div>
         </section>
+
     </div>
     @include('vendor.sidebar')
 @endsection
