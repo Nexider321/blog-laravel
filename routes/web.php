@@ -35,6 +35,8 @@ Route::get('/tag/{slug}', [\App\Http\Controllers\TagController::class, 'index'])
 
 Route::get('/post/{slug}', [PostController::class, 'show'])->name('post.show');
 
+Route::get('/search', [PostController::class, 'search']);
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
